@@ -32,8 +32,6 @@ include "includes/header.php";
 
         <input type="submit" name="signIn" value="Sign In" class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg" />
       </form>
-
-      <p class="text-xs text-gray-500 mt-3">Don't have an Account ? <a href="/signup.php">Sign up</a></p>
     </div>
   </div>
 </section>

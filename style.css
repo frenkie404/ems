@@ -6,9 +6,13 @@
 @tailwind utilities;
 
 .btn {
-  @apply block p-4 rounded hover:bg-gray-400;
+  @apply block p-4 rounded hover:bg-green-400 hover:text-white;
+}
+
+.btn--outline {
+  @apply border-current border-2;
 }
 
 .btn--active {
-  @apply bg-gray-400;
+  @apply bg-green-400 text-white;
 }

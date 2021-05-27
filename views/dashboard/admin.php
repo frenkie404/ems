@@ -69,15 +69,10 @@ if (isset($_GET["current_action"])) {
                     <option value="50000">50,000</option>
                 </select>
             </div>
-
-            <div>
-                <label class="text-gray-700" for="dateOfJoining">Date of Joining</label>
-                <input id="dateOfJoining" name="dateOfJoining" type="date" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md ">
-            </div>
         </div>
 
         <div class="flex justify-end mt-6">
-            <button class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-green-500 rounded-md hover:bg-green-400 focus:outline-none focus:bg-green-400">Save</button>
+            <input type="submit" value="Create Employee" name="createEmployee" class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-green-500 rounded-md hover:bg-green-400 focus:outline-none focus:bg-green-400" />
         </div>
     </form>
 </article>

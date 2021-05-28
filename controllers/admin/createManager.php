@@ -10,38 +10,36 @@ if (!$logged_in_as || $logged_in_as !== "admin") {
     set_session("error_code", 403);
     redirect("/error.php");
     return;
-} else if (!isset($_POST["createEmployee"])) {
+} else if (!isset($_POST["createManager"])) {
     set_session("error_code", 400);
     redirect("/error.php");
     return;
 }
 
-$form_data = from_form("POST", ["fname", "lname", "email", "address", "branch", "salary"]);
+$form_data = from_form("POST", ["fname", "lname", "email", "address", "branch"]);
 extract($form_data);
 
 $current_time = date("Y-m-d H:i:s");
 $initial_password = random_int(10000, 90000);
 
-$insert_employee_query = "INSERT INTO employees 
+$insert_manager_query = "INSERT INTO managers 
                   VALUES(
                           '', 
                           '$fname', 
                           '$lname', 
                           '$email', 
                           '$address', 
-                          '$branch', 
-                          '$salary',
-                          '', 
+                          '$branch',
                           '$current_time', 
                           '$initial_password'
                           )
                   ";
 
-$result = mysqli_query($conn, $insert_employee_query);
+$result = mysqli_query($conn, $insert_manager_query);
 
 if ($result) {
     // TODO: send an email with default password
-    redirect("/dashboard.php");
+    redirect("/dashboard.php?current_action=create_manager");
 } else {
     echo mysqli_error($conn);
 }

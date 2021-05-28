@@ -27,11 +27,23 @@ $create_employees_table = "CREATE TABLE IF NOT EXISTS employees (
     address VARCHAR(50) NOT NULL,
     branch VARCHAR(50) NOT NULL,
     salary DECIMAL(15, 2) NOT NULL,
+    bonus INT(100) NOT NULL DEFAULT 0,
     date_of_joining DATETIME NOT NULL ,
     password CHAR(60) DEFAULT NULL
     )";
 
-if (mysqli_query($conn, $create_employees_table)) {
+$create_managers_table = "CREATE TABLE IF NOT EXISTS managers (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    fname VARCHAR(30) NOT NULL,
+    lname VARCHAR(30) NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL,
+    address VARCHAR(50) NOT NULL,
+    branch VARCHAR(50) NOT NULL,
+    date_of_joining DATETIME NOT NULL ,
+    password CHAR(60) DEFAULT NULL
+    )";
+
+if (mysqli_query($conn, $create_employees_table) && mysqli_query($conn, $create_managers_table)) {
     return header("HTTP/1.1 200 OK");
 } else {
     echo mysqli_error($conn);

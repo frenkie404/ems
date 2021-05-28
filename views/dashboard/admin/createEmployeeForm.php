@@ -1,27 +1,3 @@
-<?php
-$current_action = "create_employee";
-if (isset($_GET["current_action"])) {
-    $current_action = $_GET["current_action"];
-}
-?>
-
-<nav>
-    <ul>
-        <li>
-            <a href="/dashboard.php?current_action=create_employee" class="<?php echo $current_action === "create_employee" ? "btn btn--active" : "btn" ?>">Create Employee</a>
-        </li>
-        <li>
-            <a href="/dashboard.php?current_action=create_manager" class="<?php echo $current_action === "create_manager" ? "btn btn--active" : "btn" ?>">Create Manager</a>
-        </li>
-        <li>
-            <a href="/dashboard.php?current_action=get_employees" class="<?php echo $current_action === "get_employees" ? "btn btn--active" : "btn" ?>">Get Employees</a>
-        </li>
-        <li>
-            <a href="/dashboard.php?current_action=get_managers" class="<?php echo $current_action === "get_managers" ? "btn btn--active" : "btn" ?>">Get Managers</a>
-        </li>
-    </ul>
-</nav>
-
 <article class=" h-3/5 p-6  bg-white rounded-md shadow-lg">
     <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Create Employee</h2>
 

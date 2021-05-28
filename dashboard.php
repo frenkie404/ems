@@ -8,9 +8,9 @@ if (!$logged_in_as) {
 }
 ?>
 
-<main class="flex justify-between w-4/5">
+<main class="flex justify-between w-full p-4">
     <?php
-    include "views/dashboard/" . $logged_in_as . ".php";
+    include "views/dashboard/" . $logged_in_as . "/index.php";
     ?>
 </main>
 

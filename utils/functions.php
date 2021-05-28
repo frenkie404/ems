@@ -2,7 +2,6 @@
 
 function set_session($key, $value)
 {
-  echo "setting session";
   $_SESSION[$key] = $value;
 }
 
@@ -59,9 +58,10 @@ function output_table($headings, $data, $current_user)
                 <a href=\"/controllers/manager/handleAttendance.php?student_id=$id&action=present\"  class=\"btn btn--inline btn--green mr-4\">Present</a>
             </td>";
     } elseif ($current_user === "admin") {
+      $id = $datum["id"];
       echo "<td class=\"border-b-2 p-4\">
-                <a href=\"/controllers/admin?action=edit\"  class=\"btn btn--inline btn--outline mr-4\">Edit</a>
-                <a href=\"/controllers/admin/delete.php?id=x\"  class=\"btn btn--inline btn--outline\">Delete</a>
+                <a href=\"/dashboard.php?current_action=edit&id=$id\"  class=\"btn btn--inline btn--outline mr-4\">Edit</a>
+                <a href=\"/controllers/admin/deleteEmployee.php?id=$id\"  class=\"btn btn--inline btn--outline\">Delete</a>
         </td>";
     }
 

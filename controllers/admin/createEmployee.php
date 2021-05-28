@@ -4,7 +4,6 @@ include "../../utils/functions.php";
 include "../../utils/db.php";
 
 $logged_in_as = get_session("logged_in_as");
-$create = get_session("create");
 
 if (!$logged_in_as || $logged_in_as !== "admin") {
     set_session("error_code", 403);

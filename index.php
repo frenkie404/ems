@@ -1,5 +1,8 @@
 <?php
 include "includes/header.php";
+if (get_session("logged_in_as")) {
+  redirect("/dashboard.php");
+}
 ?>
 
 <section class="text-gray-600 body-font">

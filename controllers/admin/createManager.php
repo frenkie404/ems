@@ -4,7 +4,6 @@ include "../../utils/functions.php";
 include "../../utils/db.php";
 
 $logged_in_as = get_session("logged_in_as");
-$create = get_session("create");
 
 if (!$logged_in_as || $logged_in_as !== "admin") {
     set_session("error_code", 403);
@@ -39,6 +38,8 @@ $result = mysqli_query($conn, $insert_manager_query);
 
 if ($result) {
     // TODO: send an email with default password
+
+    $_SESSION["data"] = null;
     redirect("/dashboard.php?current_action=create_manager");
 } else {
     echo mysqli_error($conn);

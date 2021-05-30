@@ -2,6 +2,8 @@
 session_start();
 $path = $_SERVER["DOCUMENT_ROOT"];
 include $path . "/utils/functions.php";
+
+set_session("error_code", null);
 ?>
 
 <!DOCTYPE html>

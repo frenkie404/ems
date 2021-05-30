@@ -26,6 +26,9 @@ function validate_manager($form_data)
             set_session("logged_in_as", "manager");
             set_session("user", $fetched_assoc);
             redirect("/dashboard.php");
+        } else {
+            set_session("error_code", 401);
+            redirect("/error.php");
         }
     } else {
         set_session("error_code", 401);

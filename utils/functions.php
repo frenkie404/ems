@@ -22,19 +22,37 @@ function redirect($url)
 function get_title()
 {
   $logged_in_as = get_session("logged_in_as");
+  $error_code = get_session("error_code");
 
-  switch ($logged_in_as) {
-    case "admin":
-      return "Admin | EMS";
-      break;
-    case "manager":
-      return "Manager | EMS";
-      break;
-    case "employee":
-      return "Employee | EMS";
-      break;
-    default:
-      return "EMS - Employee Management System";
+  if ($error_code) {
+    switch ($error_code) {
+      case 400:
+        return "Error 400 | Bad Request";
+        break;
+      case 401:
+        return "Error 401 | Unauthorized";
+        break;
+      case 403:
+        return "Error 403 | Forbidden";
+        break;
+      case 500:
+        return "Error 500 | Server Broke Down";
+        break;
+    }
+  } else {
+    switch ($logged_in_as) {
+      case "admin":
+        return "Admin | EMS";
+        break;
+      case "manager":
+        return "Manager | EMS";
+        break;
+      case "employee":
+        return "Employee | EMS";
+        break;
+      default:
+        return "EMS - Employee Management System";
+    }
   }
 }
 

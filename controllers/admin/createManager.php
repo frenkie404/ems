@@ -30,7 +30,8 @@ $insert_manager_query = "INSERT INTO managers
                           '$address', 
                           '$branch',
                           '$current_time', 
-                          '$initial_password'
+                          '$initial_password',
+                          ''
                           )
                   ";
 

@@ -32,7 +32,8 @@ $insert_employee_query = "INSERT INTO employees
                           '$salary',
                           '', 
                           '$current_time', 
-                          '$initial_password'
+                          '$initial_password',
+                          ''
                           )
                   ";
 

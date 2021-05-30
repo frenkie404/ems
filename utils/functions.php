@@ -21,6 +21,21 @@ function redirect($url)
 
 function get_title()
 {
+  $logged_in_as = get_session("logged_in_as");
+
+  switch ($logged_in_as) {
+    case "admin":
+      return "Admin | EMS";
+      break;
+    case "manager":
+      return "Manager | EMS";
+      break;
+    case "employee":
+      return "Employee | EMS";
+      break;
+    default:
+      return "EMS - Employee Management System";
+  }
 }
 
 function from_form($method = "POST", $names)

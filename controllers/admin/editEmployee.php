@@ -8,6 +8,7 @@ if (!$logged_in_as || $logged_in_as !== "admin") {
     set_session("error_code", 403);
     redirect("/error.php");
     return;
+}
 
 
 $form_data = from_form("POST", ["fname", "lname", "email", "address", "branch", "salary"]);
@@ -30,7 +31,7 @@ $update_employee_query = "UPDATE employees
 
 $result = mysqli_query($conn, $update_employee_query);
 if ($result) {
-    $_SESSION["data"] = null;
+    $_SESSION["employees"] = null;
     redirect("/dashboard.php?current_action=get_employees");
 } else {
     echo mysqli_error($conn);

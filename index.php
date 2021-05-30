@@ -5,7 +5,7 @@ if (get_session("logged_in_as")) {
 }
 ?>
 
-<section class="text-gray-600 body-font">
+<main class="text-gray-600 body-font w-full">
   <div class="container px-5 py-24 mx-auto flex flex-wrap items-center justify-between">
     <div class="w-2/5 pr-0">
       <h1 class="title-font font-bold text-3xl text-gray-900">The Employee Management System</h1>
@@ -37,7 +37,7 @@ if (get_session("logged_in_as")) {
       </form>
     </div>
   </div>
-</section>
+</main>
 
 <?php
 include "includes/footer.php";

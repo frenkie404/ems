@@ -30,7 +30,7 @@ $create_employees_table = "CREATE TABLE IF NOT EXISTS employees (
     bonus INT(100) NOT NULL DEFAULT 0,
     date_of_joining DATETIME NOT NULL ,
     password CHAR(60) DEFAULT NULL,
-    isVerified BOOLEAN NOT NULL DEFAULT 0
+    is_verified BOOLEAN NOT NULL DEFAULT 0
     )";
 
 $create_managers_table = "CREATE TABLE IF NOT EXISTS managers (
@@ -42,7 +42,7 @@ $create_managers_table = "CREATE TABLE IF NOT EXISTS managers (
     branch VARCHAR(50) NOT NULL,
     date_of_joining DATETIME NOT NULL ,
     password CHAR(60) DEFAULT NULL,
-    isVerified BOOLEAN NOT NULL DEFAULT 0
+    is_verified BOOLEAN NOT NULL DEFAULT 0
     )";
 
 if (mysqli_query($conn, $create_employees_table) && mysqli_query($conn, $create_managers_table)) {

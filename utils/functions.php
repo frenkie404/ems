@@ -75,7 +75,7 @@ function output_table($headings, $data, $current_user)
   echo "<tr class=\"text-gray-700\">";
 
   foreach ($headings as $heading) {
-    echo "<th class=\"border-b-2 p-4 whitespace-nowrap font-normal text-gray-900\">$heading</th>";
+    echo "<th class=\"border-b-2 p-4 whitespace-nowrap font-bold text-gray-900\">$heading</th>";
   }
 
   echo "</tr>";
@@ -88,7 +88,7 @@ function output_table($headings, $data, $current_user)
     if ($current_user === "manager") {
       $id = $datum["id"];
       echo "<td class=\"border-b-2 p-4\">
-                <a href=\"/controllers/manager/handleAttendance.php?student_id=$id&action=present\"  class=\"btn btn--inline btn--green mr-4\">Present</a>
+                <a href=\"/controllers/manager/editBonus.php?id=$id\"  class=\"btn btn--outline\">Edit Bonus</a>
             </td>";
     } elseif ($current_user === "admin") {
       $id = $datum["id"];

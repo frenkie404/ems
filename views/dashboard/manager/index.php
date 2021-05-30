@@ -8,5 +8,11 @@ extract($user);
 if ($is_verified === '0') {
     include "changePassword.php";
 } else {
-    include "getEmployees.php";
+    $employees = get_session("employees");
+
+    if (!$employees) {
+        redirect("/controllers/manager/getEmployees.php");
+        return;
+    }
+    output_table(["#", "First Name", "Last Name", "Email", "Address", "Salary", "Bonus", "Date of Joining", "Actions"], $employees, "manager");
 }

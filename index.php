@@ -15,7 +15,7 @@ if (get_session("logged_in_as")) {
     <div class=" bg-gray-100 rounded-lg p-8 flex flex-col w-3/5 mt-10">
       <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Sign In</h2>
 
-      <form action="controllers/authenticate/index.php" method="POST" class="relative mb-4">
+      <form action="controllers/authenticate/index.php" method="POST" class="relative mb-4 requiresValidation" id="signInForm">
         <label for="username" class="leading-7 text-sm text-gray-600">username</label>
         <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
 

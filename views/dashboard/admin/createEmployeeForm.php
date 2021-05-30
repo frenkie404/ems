@@ -1,7 +1,7 @@
 <article class=" h-3/5 p-6  bg-white rounded-md shadow-lg">
     <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Create Employee</h2>
 
-    <form action="controllers/admin/createEmployee.php" method="POST">
+    <form action="controllers/admin/createEmployee.php" method="POST" class="requiresValidation" id="createEmployee">
         <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
             <div>
                 <label class="text-gray-700" for="fname">First Name</label>

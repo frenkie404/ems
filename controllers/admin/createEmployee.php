@@ -9,14 +9,12 @@ if (!$logged_in_as || $logged_in_as !== "admin") {
     set_session("error_code", 403);
     redirect("/error.php");
     return;
-} else if (!isset($_POST["createEmployee"])) {
-    set_session("error_code", 400);
-    redirect("/error.php");
-    return;
 }
 
 $form_data = from_form("POST", ["fname", "lname", "email", "address", "branch", "salary"]);
 extract($form_data);
+
+// TODO: validate form here. Redirect to "error.php" with code 400 if not valid
 
 $current_time = date("Y-m-d H:i:s");
 $initial_password = random_int(10000, 90000);

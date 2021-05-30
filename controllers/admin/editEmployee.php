@@ -8,14 +8,12 @@ if (!$logged_in_as || $logged_in_as !== "admin") {
     set_session("error_code", 403);
     redirect("/error.php");
     return;
-} else if (!isset($_POST["editEmployee"])) {
-    set_session("error_code", 400);
-    redirect("/error.php");
-    return;
-}
+
 
 $form_data = from_form("POST", ["fname", "lname", "email", "address", "branch", "salary"]);
 extract($form_data);
+
+// TODO: validate form here. Redirect to "error.php" with code 400 if not valid
 
 $id = get_session("update_id");
 

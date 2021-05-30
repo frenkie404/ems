@@ -1,15 +1,23 @@
 <?php
-$employees = get_session("data");
+$employees = get_session("employees");
 $id = $_GET["id"];
 set_session("update_id", $id);
 
-function get_employee($employee)
+function filter_employee()
 {
-    global $id;
-    return $employee["id"] === $id;
+    global $id, $employees;
+    $filtered = null;
+
+    for ($i = 0; $i < count($employees); $i++) {
+        if ($employees[$i]["id"] === $id) {
+            $filtered = $employees[$i];
+            break;
+        }
+    }
+    return $filtered;
 }
 
-$filtered_employee = array_filter($employees, "get_employee")[$id - 1];
+$filtered_employee = filter_employee();
 extract($filtered_employee);
 
 function is_option_selected($name, $value)

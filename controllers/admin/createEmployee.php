@@ -40,6 +40,7 @@ $result = mysqli_query($conn, $insert_employee_query);
 
 if ($result) {
     // TODO: send an email with default password
+    $_SESSION["employees"] = null;
     redirect("/dashboard.php");
 } else {
     echo mysqli_error($conn);

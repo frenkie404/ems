@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 .btn {
-  @apply block p-4 rounded hover:bg-green-400 hover:text-white;
+  @apply block p-2 rounded hover:bg-green-400 hover:text-white;
 }
 
 .btn--outline {
@@ -15,4 +15,8 @@
 
 .btn--active {
   @apply bg-green-400 text-white;
+}
+
+.btn--inline {
+  @apply inline-block;
 }

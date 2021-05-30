@@ -20,7 +20,7 @@ $delete_employee_query = "DELETE FROM employees WHERE id='$id' ";
 
 $result = mysqli_query($conn, $delete_employee_query);
 if ($result) {
-    $_SESSION["data"] = null;
+    $_SESSION["employees"] = null;
     redirect("/dashboard.php?current_action=get_employees");
 } else {
     echo mysqli_error($conn);

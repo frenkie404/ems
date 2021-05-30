@@ -38,7 +38,7 @@ function from_form($method = "POST", $names)
 
 function output_table($headings, $data, $current_user)
 {
-  echo "<table class=\"table p-4 bg-white shadow rounded-lg w-4/5\">";
+  echo "<table class=\"table p-4 bg-white shadow rounded-lg w-full ml-16\">";
   echo "<tr class=\"text-gray-700\">";
 
   foreach ($headings as $heading) {

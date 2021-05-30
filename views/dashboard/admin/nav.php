@@ -1,3 +1,15 @@
+<?php
+function get_nav_class_name($nav_action)
+{
+    global $current_action;
+    $class_name = "btn w-content text-center ";
+    if ($current_action === $nav_action) {
+        return $class_name . "btn--active";
+    }
+    return $class_name;
+}
+?>
+
 <nav>
     <ul class="grid grid-flow-row gap-4">
         <li>

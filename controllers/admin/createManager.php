@@ -39,7 +39,7 @@ $result = mysqli_query($conn, $insert_manager_query);
 if ($result) {
     // TODO: send an email with default password
 
-    $_SESSION["data"] = null;
+    $_SESSION["managers"] = null;
     redirect("/dashboard.php?current_action=create_manager");
 } else {
     echo mysqli_error($conn);

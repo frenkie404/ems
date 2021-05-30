@@ -4,7 +4,7 @@ include "../../utils/functions.php";
 include "../../utils/db.php";
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-$read_query = "SELECT id, fname, lname, email, address, branch, salary, bonus, date_of_joining FROM employees";
+$read_query = "SELECT id, fname, lname, email, address, branch, date_of_joining FROM managers";
 
 try {
     $result = mysqli_query($conn, $read_query);
@@ -18,8 +18,8 @@ if ($result) {
         $rows[] = $row;
     }
     header("HTTP/1.1 200 Ok");
-    set_session("employees", $rows);
-    redirect("/dashboard.php?current_action=get_employees");
+    set_session("managers", $rows);
+    redirect("/dashboard.php?current_action=get_managers");
 } else {
     header("HTTP/1.1 500 Internal Server Error");
     echo "error";

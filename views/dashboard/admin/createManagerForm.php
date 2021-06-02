@@ -1,7 +1,7 @@
 <article class=" h-3/5 p-6  bg-white rounded-md shadow-lg">
     <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Create Manager</h2>
 
-    <form action="controllers/admin/createManager.php" method="POST" class="requiresValidation" id="createManager">
+    <form enctype="multipart/form-data" action="controllers/admin/createManager.php" method="POST" class="requiresValidation" id="createManager">
         <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
             <div>
                 <label class="text-gray-700" for="fname">First Name</label>
@@ -32,6 +32,11 @@
                     <option value="production">Production</option>
                     <option value="human resource">Human Resource</option>
                 </select>
+            </div>
+
+            <div>
+                <label class="btn btn--active text-center cursor-pointer" for="picture">Picture</label>
+                <input id="picture" type="file" name="picture" accept="image/png, image/jpeg" />
             </div>
         </div>
 

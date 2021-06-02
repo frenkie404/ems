@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+input[type="file"] {
+  display: none;
+}
+
 .btn {
   @apply block p-2 rounded hover:bg-green-400 hover:text-white;
 }

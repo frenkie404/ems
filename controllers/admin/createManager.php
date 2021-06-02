@@ -12,9 +12,20 @@ if (!$logged_in_as || $logged_in_as !== "admin") {
 }
 
 $form_data = from_form("POST", ["fname", "lname", "email", "address", "branch"]);
-extract($form_data);
+
+
+$picture_name = $_FILES["picture"]["name"];
+$picture_temp_name = $_FILES["picture"]["tmp_name"];
+$picture_type = $_FILES["picture"]["type"];
+$picture_extension = explode(".", $picture_name)[1];
+$picture_unique_name = uniqid("", true) . "." . $picture_extension; // unique id based on microseconds, e.g. 60b799dc59d441.05495857.jpg 
+$picture_path = "/uploads/managers/$picture_unique_name";
+
 
 // TODO: validate form here. Redirect to "error.php" with code 400 if not valid
+
+extract($form_data);
+move_uploaded_file($picture_temp_name, $root . $picture_path);
 
 $current_time = date("Y-m-d H:i:s");
 $initial_password = random_int(10000, 90000);
@@ -29,7 +40,8 @@ $insert_manager_query = "INSERT INTO managers
                           '$branch',
                           '$current_time', 
                           '$initial_password',
-                          ''
+                          '',
+                          '$picture_path'
                           )
                   ";
 

@@ -37,13 +37,13 @@ switch ($error_code) {
     <link rel="stylesheet" href="public/style.css" />
 </head>
 
-<body class="flex min-h-screen flex-col justify-center items-center">
+<body>
     <section>
-        <h1 class="text-red-600 text-4xl mb-6 font-bold"><?php echo $error_message ?></h1>
+        <h1><?php echo $error_message ?></h1>
         <p>Learn more about the error
-            <a href=<?php echo "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/" . $error_code ?> target="_blank" class="text-blue-500">here.</a>
+            <a href=<?php echo "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/" . $error_code ?> target="_blank">here.</a>
         </p>
-        <a href="/" class="block mt-6 text-white text-center bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Return Home</a>
+        <a href="/">Return Home</a>
     </section>
 </body>
 

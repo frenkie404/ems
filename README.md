@@ -1,2 +1,0 @@
-# ems
-Employee Management System
